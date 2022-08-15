@@ -20,6 +20,8 @@
     <ProjectReference Include="..\FinanceUtilities\FinanceUtilities.csproj" />
     <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\JointTask\JointTask.csproj" />
+    <ProjectReference Include="..\UsersRewardsTests\UsersRewardsTests.csproj" />
+    <ProjectReference Include="..\Validator\Validator.csproj" />
   </ItemGroup>
 
 </Project>
