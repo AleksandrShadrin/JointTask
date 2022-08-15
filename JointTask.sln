@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conversion", "Conversion\Conversion.csproj", "{28F6230C-E44D-4970-89E5-0966E0017501}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOUtilitiesTest", "IOUtilitiesTest\IOUtilitiesTest.csproj", "{0B42766C-143B-4685-9767-E5BE7B2A8A55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOUtilities", "IOUtilities\IOUtilities.csproj", "{92C3859F-90D5-4496-ABE3-FFC33B3B5F02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{28F6230C-E44D-4970-89E5-0966E0017501}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28F6230C-E44D-4970-89E5-0966E0017501}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28F6230C-E44D-4970-89E5-0966E0017501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B42766C-143B-4685-9767-E5BE7B2A8A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B42766C-143B-4685-9767-E5BE7B2A8A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B42766C-143B-4685-9767-E5BE7B2A8A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B42766C-143B-4685-9767-E5BE7B2A8A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92C3859F-90D5-4496-ABE3-FFC33B3B5F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92C3859F-90D5-4496-ABE3-FFC33B3B5F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92C3859F-90D5-4496-ABE3-FFC33B3B5F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92C3859F-90D5-4496-ABE3-FFC33B3B5F02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
