@@ -1,9 +1,10 @@
 ﻿using Core;
 using Interfaces;
 using System;
+
 namespace InputProcessing
 {
-    class Parser : Interfaces.IParser
+    public class Parser : Interfaces.IParser
     {
         public User Parse(string line)
         {

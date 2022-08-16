@@ -18,10 +18,10 @@
     <ProjectReference Include="..\Conversion\Conversion.csproj" />
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\FinanceUtilities\FinanceUtilities.csproj" />
+    <ProjectReference Include="..\InputProcessing\InputProcessing.csproj" />
     <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\JointTask\JointTask.csproj" />
     <ProjectReference Include="..\UsersRewardsTests\UsersRewardsTests.csproj" />
-    <ProjectReference Include="..\Validator\Validator.csproj" />
   </ItemGroup>
 
 </Project>

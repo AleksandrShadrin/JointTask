@@ -1,6 +1,7 @@
 using Core;
 using Interfaces;
 using IOUtilities;
+using IOUtilities.Exceptions;
 using System.Reflection;
 using Xunit.Sdk;
 

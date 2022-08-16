@@ -7,4 +7,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Conversion\Conversion.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\FinanceUtilities\FinanceUtilities.csproj" />
+    <ProjectReference Include="..\InputProcessing\InputProcessing.csproj" />
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
+    <ProjectReference Include="..\IOUtilities\IOUtilities.csproj" />
+  </ItemGroup>
+
 </Project>

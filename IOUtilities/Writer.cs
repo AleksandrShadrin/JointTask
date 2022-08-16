@@ -1,10 +1,6 @@
 ﻿using Core;
 using Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using IOUtilities.Exceptions;
 
 namespace IOUtilities
 {
@@ -12,10 +8,16 @@ namespace IOUtilities
     {
 
         public FileInfo File { get; set; }
+     
         public Writer(string path)
         {
             File = new FileInfo(path);
         }
+        /// <summary>
+        ///Производит запись юзеров в файл
+        /// </summary>
+        /// <param name="userList"></param>
+        /// <exception cref="FileExistException"></exception>
         public void Write(IEnumerable<User> userList)
         {
             if (File.Exists)
