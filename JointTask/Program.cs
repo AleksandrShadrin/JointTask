@@ -4,15 +4,23 @@ using InputProcessing;
 using IOUtilities;
 using Interfaces;
 using IOUtilities.Exceptions;
+using Log;
 
 namespace JointTask
 {
+    
     public class Program
-    {
+    {   
         public static void Main(string[] args)
         {
+
+            Action<string> ExceptionLogger;
+            Logger logger = new ConsoleLogger();
+            ExceptionLogger = logger.Log;
+
+
             //читаем с файла
-            IReader reader = new Reader(new Parser(), new Validator());
+            IReader reader = new Reader(new Parser(), new Validator(ExceptionLogger));
             IEnumerable<User> users = reader.Read(@"C:\Users\User\Documents\mveuC#\1660602157406.txt");
             
             //обрабатываем
@@ -30,7 +38,8 @@ namespace JointTask
             }
             catch(FileException ex)
             {
-                Console.WriteLine(ex.Message);
+                ExceptionLogger?.Invoke(ex.Message);
+                //Console.WriteLine(ex.Message);
             }  
         }
 

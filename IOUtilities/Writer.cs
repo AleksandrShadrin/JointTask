@@ -30,7 +30,7 @@ namespace IOUtilities
                 {
                     foreach (var user in userList)
                     {
-                        sw.WriteLine($"{user.GetFio()}\t{user.GetAmount()}");
+                        sw.WriteLine($"{user.GetAmount()}\t{user.GetFio()}");
                     }
                 }
             }

@@ -1,6 +1,7 @@
 using Interfaces;
 using InputProcessing;
 using NUnit.Framework;
+using System;
 
 namespace ValidatorTests
 {

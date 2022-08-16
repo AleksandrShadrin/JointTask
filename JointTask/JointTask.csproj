@@ -14,6 +14,7 @@
     <ProjectReference Include="..\InputProcessing\InputProcessing.csproj" />
     <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\IOUtilities\IOUtilities.csproj" />
+    <ProjectReference Include="..\Log\Log.csproj" />
   </ItemGroup>
 
 </Project>
