@@ -16,7 +16,10 @@ namespace Loader
             SearchInDirectory(Environment.SpecialFolder.LocalApplicationData);
             GetFromParams();
         }
+        public ConfigLoader()
+        {
 
+        }
         private ConfigLoader(Dictionary<string, string> config)
         {
             _config = config;
@@ -45,24 +48,31 @@ namespace Loader
         private void GetFromParams()
         {
             var values = string.Join(" ", Environment.GetCommandLineArgs()).Split("-");
-            if (values[0] != null)
+            if (String.IsNullOrWhiteSpace(values.ElementAtOrDefault(01)) == false)
             {
-                TryAssignValue("sourceFile" + values[0]);
+                TryAssignValue("sourceFile " + values[0]);
             }
-            if (values[1] != null)
+            if (String.IsNullOrWhiteSpace(values.ElementAtOrDefault(1)) == false)
             {
-                TryAssignValue("reportFile" + values[1]);
+                TryAssignValue("reportFile " + values[1]);
             }
-            if (values[2] != null)
+            if (String.IsNullOrWhiteSpace(values.ElementAtOrDefault(2)) == false)
             {
-                TryAssignValue("reward" + values[2]);
+                TryAssignValue("reward " + values[2]);
             }
         }
-
+        public string TryGetValue(string key)
+        {
+            if (_config.TryGetValue(key, out var value))
+            {
+                return value;
+            }
+            return "";
+        }
         private void TryAssignValue(string value)
         {
             string[] values = value.Split(" ");
-            if (!string.IsNullOrWhiteSpace(values[1]))
+            if (!string.IsNullOrWhiteSpace(value) && values.Length == 2)
                 switch (values[0])
                 {
                     case "sourceFile":
@@ -94,7 +104,7 @@ namespace Loader
         }
         public object Clone()
         {
-            Dictionary<string, string> newDict = new Dictionary<string, string>();
+            var newDict = new Dictionary<string, string>();
             foreach (var value in this)
             {
                 newDict.TryAdd(value.Key, value.Value);
