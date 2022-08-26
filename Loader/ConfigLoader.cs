@@ -94,7 +94,12 @@ namespace Loader
         }
         public object Clone()
         {
-            return new ConfigLoader(this._config);
+            Dictionary<string, string> newDict = new Dictionary<string, string>();
+            foreach (var value in _config)
+            {
+                newDict.TryAdd(value.Key, value.Value);
+            }
+            return new ConfigLoader(newDict);
         }
         public bool MoveNext()
         {
