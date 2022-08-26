@@ -25,7 +25,6 @@ namespace JointTask
             //LoadConfigure
             ConfigLoader configLoader = new ConfigLoader();
             configLoader.LoadConfig();
-
             //читаем с файла
             IReader reader = new Reader(new Parser(), new Validator(ExceptionLogger));
             //IEnumerable<User> users = reader.Read(@"C:\Users\User\Documents\mveuC#\1660602157406.txt");

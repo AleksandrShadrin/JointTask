@@ -47,7 +47,8 @@ namespace Loader
         }
         private void GetFromParams()
         {
-            var values = string.Join(" ", Environment.GetCommandLineArgs()).Split("-");
+            var values = string.Join(" ", Environment.GetCommandLineArgs().Skip(1)).Split("-");
+
             if (String.IsNullOrWhiteSpace(values.ElementAtOrDefault(01)) == false)
             {
                 TryAssignValue("sourceFile " + values[0]);
