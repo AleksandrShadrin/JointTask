@@ -2,7 +2,7 @@
 
 namespace Loader
 {
-    public class ConfigLoader : ICloneable, IComparable<ConfigLoader>, IEnumerator<KeyValuePair<string, string>>
+    public class ConfigLoader : ICloneable, IComparable<ConfigLoader>, IEnumerator<KeyValuePair<string, string>>, IEnumerable<KeyValuePair<string, string>>
     {
         public KeyValuePair<string, string> Current => _config.ElementAtOrDefault(currentPosition);
 
@@ -95,7 +95,7 @@ namespace Loader
         public object Clone()
         {
             Dictionary<string, string> newDict = new Dictionary<string, string>();
-            foreach (var value in _config)
+            foreach (var value in this)
             {
                 newDict.TryAdd(value.Key, value.Value);
             }
@@ -117,6 +117,16 @@ namespace Loader
         public void Dispose()
         {
             _config.Clear();
+        }
+
+        public IEnumerator<KeyValuePair<string, string>> GetEnumerator()
+        {
+            return this;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this;
         }
     }
 }
