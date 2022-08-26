@@ -62,22 +62,28 @@ namespace Loader
         private void TryAssignValue(string value)
         {
             string[] values = value.Split(" ");
-            if (!string.IsNullOrEmpty(values[1]))
+            if (!string.IsNullOrWhiteSpace(values[1]))
                 switch (values[0])
                 {
                     case "sourceFile":
-                        _config.Add("sourceFile", values[1]);
+                        TryAddValueToDictionary(values);
                         break;
                     case "reportFile":
-                        _config.Add("reportFile", values[1]);
+                        TryAddValueToDictionary(values);
                         break;
                     case "reward":
-                        _config.Add("reward", values[1]);
+                        TryAddValueToDictionary(values);
                         break;
                 }
         }
-
-
+        private void TryAddValueToDictionary(string[] values)
+        {
+            if (_config.ContainsKey(values[0]))
+            {
+                _config[values[0]] = values[1];
+            }
+            _config.Add(values[0], values[1]);
+        }
         public int CompareTo(ConfigLoader? other)
         {
             if (other is not null)
