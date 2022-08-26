@@ -86,16 +86,15 @@ namespace Loader
             }
             return 1;
         }
-
         public object Clone()
         {
             return new ConfigLoader(this._config);
         }
-
         public bool MoveNext()
         {
             if (_config.Count >= currentPosition)
             {
+                currentPosition += 1;
                 return true;
             }
             return false;
